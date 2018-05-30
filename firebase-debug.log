@@ -1,0 +1,89 @@
+[debug] [2018-05-30T15:24:58.275Z] ----------------------------------------------------------------------
+[debug] [2018-05-30T15:24:58.277Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-05-30T15:24:58.277Z] CLI Version:   3.18.5
+[debug] [2018-05-30T15:24:58.277Z] Platform:      darwin
+[debug] [2018-05-30T15:24:58.277Z] Node Version:  v10.3.0
+[debug] [2018-05-30T15:24:58.277Z] Time:          Wed May 30 2018 12:24:58 GMT-0300 (-03)
+[debug] [2018-05-30T15:24:58.278Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-30T15:24:58.285Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-30T15:24:58.286Z] > authorizing via signed-in user
+[debug] [2018-05-30T15:24:58.287Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-05-30T15:24:58.287Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/eqUZ1hiBO8uk6rH67hTvawsCJeQFOpigyyswg2ydPlU',
+  client_id:
+   '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope:
+   'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed May 30 2018 12:24:58 GMT-0300 (-03)
+[debug] [2018-05-30T15:24:59.046Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-30T15:24:59.054Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/newagent-5785a  
+  
+ Wed May 30 2018 12:24:59 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:00.290Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-30T15:25:00.291Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/newagent-5785a/tokens  
+  
+ Wed May 30 2018 12:25:00 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:01.271Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-30T15:25:01.272Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/newagent-5785a  
+  
+ Wed May 30 2018 12:25:01 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:02.436Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/victor/Projetos/friendlychat-web/web-start'...
+[info] 
+[debug] [2018-05-30T15:25:03.315Z] Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/logs'
+    at Object.fs.mkdirSync (fs.js:872:3)
+    at Object.assertLogsPath (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/logs.js:65:10)
+    at new Controller (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/cli/controller.js:77:32)
+    at FunctionsEmulator.start (/usr/local/lib/node_modules/firebase-tools/lib/functionsEmulator.js:113:21)
+    at Object.start (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:9:29)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:17:21
+    at arrayMap (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:639:23)
+    at Function.map (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:9554:14)
+    at _serve (/usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:15:7)
+    at Command._action (/usr/local/lib/node_modules/firebase-tools/commands/serve.js:48:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-05-30T15:25:45.684Z] ----------------------------------------------------------------------
+[debug] [2018-05-30T15:25:45.686Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-05-30T15:25:45.686Z] CLI Version:   3.18.5
+[debug] [2018-05-30T15:25:45.686Z] Platform:      darwin
+[debug] [2018-05-30T15:25:45.686Z] Node Version:  v10.3.0
+[debug] [2018-05-30T15:25:45.687Z] Time:          Wed May 30 2018 12:25:45 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:45.687Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-30T15:25:45.697Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-30T15:25:45.698Z] > authorizing via signed-in user
+[debug] [2018-05-30T15:25:45.699Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/newagent-5785a  
+  
+ Wed May 30 2018 12:25:45 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:46.985Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-30T15:25:46.986Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/newagent-5785a/tokens  
+  
+ Wed May 30 2018 12:25:46 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:47.908Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-30T15:25:47.909Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/newagent-5785a  
+  
+ Wed May 30 2018 12:25:47 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:49.131Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/victor/Projetos/friendlychat-web/web-start'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-05-30T15:25:49.575Z] Fetching environment
+[debug] [2018-05-30T15:25:49.577Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/50160383295:getServerAppConfig  
+  
+ Wed May 30 2018 12:25:49 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:49.578Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/50160383295/clients/_:getWebAppConfig  
+  
+ Wed May 30 2018 12:25:49 GMT-0300 (-03)
+[debug] [2018-05-30T15:25:50.721Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-05-30T15:25:51.299Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-30T15:25:51.300Z] Starting @google-cloud/functions-emulator
+[debug] [2018-05-30T15:25:52.351Z] Parsing function triggers
