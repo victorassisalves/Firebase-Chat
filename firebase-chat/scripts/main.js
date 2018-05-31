@@ -250,7 +250,7 @@ FriendlyChat.prototype.saveMessagingDeviceToken = function() {
       console.log('Got FCM device token:', currentToken);
 
       // Save the device Token to the data store
-      firebase.databe().ref('/fcmTokens').child(currentToken).set(firebase.auth().currentUser.uid);
+      firebase.database().ref('/fcmTokens').child(currentToken).set(firebase.auth().currentUser.uid);
     } else {
       // Need to request Permission to show notification
       this.requestNotificationsPermissions();

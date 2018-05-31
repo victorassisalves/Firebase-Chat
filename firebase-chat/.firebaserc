@@ -1,6 +1,8 @@
 {
   "projects": {
     "Meu chat": "friendlychat-5303b",
-    "Meu Chat": "newagent-5785a"
+    "Meu Chat": "newagent-5785a",
+    "Firebase chat": "newagent-5785a",
+    "Onsurance Chat": "onsurance-me"
   }
 }

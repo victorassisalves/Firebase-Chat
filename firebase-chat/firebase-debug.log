@@ -1,0 +1,295 @@
+[debug] [2018-05-31T21:25:10.279Z] ----------------------------------------------------------------------
+[debug] [2018-05-31T21:25:10.280Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-05-31T21:25:10.281Z] CLI Version:   3.18.5
+[debug] [2018-05-31T21:25:10.281Z] Platform:      darwin
+[debug] [2018-05-31T21:25:10.281Z] Node Version:  v10.3.0
+[debug] [2018-05-31T21:25:10.281Z] Time:          Thu May 31 2018 18:25:10 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:10.281Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-31T21:25:10.290Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-31T21:25:10.290Z] > authorizing via signed-in user
+[debug] [2018-05-31T21:25:10.291Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/onsurance-me  
+  
+ Thu May 31 2018 18:25:10 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:11.717Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:25:11.718Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/onsurance-me/tokens  
+  
+ Thu May 31 2018 18:25:11 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:13.252Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'onsurance-me'...
+[info] 
+[info] i  deploying database, storage, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-05-31T21:25:16.568Z] >>> HTTP REQUEST PUT https://onsurance-me.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+    "rules": {
+        "messages": {
+            ".read": "auth !== null",
+            ".write": "auth !== null"
+        },
+        "fcmTokens": {
+         "$token": {
+             ".read": "data.val() === auth.uid",
+             ".write": "!data.exists() || data.val() === auth.uid",
+             ".validate": "newData.val() === auth.uid"
+         }
+        }
+    }
+}
+ 
+ Thu May 31 2018 18:25:16 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:17.702Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database onsurance-me is valid
+[debug] [2018-05-31T21:25:17.704Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/onsurance-me  
+  
+ Thu May 31 2018 18:25:17 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:19.651Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-05-31T21:25:19.653Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/onsurance-me:test  
+ { source: { files: [ [Object] ] } } 
+ Thu May 31 2018 18:25:19 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:21.517Z] <<< HTTP RESPONSE 200
+[info] ✔  storage: rules file storage.rules compiled successfully
+[debug] [2018-05-31T21:25:21.518Z] > [functions] package.json contents: {
+  "name": "friendlychat-codelab",
+  "description": "Firebase SDK for Cloud Functions codelab",
+  "dependencies": {
+    "@google-cloud/storage": "^1.5.1",
+    "@google-cloud/vision": "^0.12.0",
+    "child-process-promise": "^2.2.1",
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.0",
+    "eslint-plugin-promise": "^3.6.0"
+  }
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-05-31T21:25:21.519Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/onsurance-me?view=CONSUMER_VIEW  
+  
+ Thu May 31 2018 18:25:21 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:21.519Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/onsurance-me?view=CONSUMER_VIEW  
+  
+ Thu May 31 2018 18:25:21 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:23.630Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:25:23.780Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-05-31T21:25:23.782Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/onsurance-me  
+  
+ Thu May 31 2018 18:25:23 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:25.031Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:25:25.031Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/648977158469:getServerAppConfig  
+  
+ Thu May 31 2018 18:25:25 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:26.717Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-05-31T21:25:26.721Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/onsurance-me/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Thu May 31 2018 18:25:26 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:28.544Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:25:28.544Z] [rules] created ruleset projects/onsurance-me/rulesets/e943c2d4-55c0-44f0-a660-0138810820e8
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-05-31T21:25:28.546Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/onsurance-me/configs  
+  
+ Thu May 31 2018 18:25:28 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:30.499Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (54.55 KB) for uploading
+[debug] [2018-05-31T21:25:31.212Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/onsurance-me/locations/us-central1/functions:generateUploadUrl  
+  
+ Thu May 31 2018 18:25:31 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:32.751Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:25:32.752Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-95bc2556-ee4d-4d1f-9cf8-a65db21c0bc0/3eec9efb-16ce-490a-a581-8de1aad6d324.zip?GoogleAccessId=648977158469@cloudservices.gserviceaccount.com&Expires=1527803732&Signature=Qhiagj2dUEoz2vYc%2F0yxm7XT9ZaaRhnM14ZqywAl6%2BOS8Y0nRluCA9morgdEeFlHsFI6%2FtL5i8zRlNvXOBs31N00p9vjHRtGTepGkNByFGgltn9hScutK%2FZLsoQVQ%2BePelF7tzsJs0hmAEK04gZkhju17Ri8AMeTC2xg1sy21DeX2BsO7OlHhNngX%2BkVitd3pr0Kzry6YxeiUnTuGZ6lNuNWd1X3De4g9XZx48cPNe%2FuZeAFRJjxGHw9%2FpfoqfuXzJcQG8Qr%2FvLp5vBriuSaPV5ZzCsPps9p%2Fi3Fktre5OsyNgGLuoh2WIUrUxrkv7f4U5dhbtkhljJ%2FtagCZYCrCQ%3D%3D  
+ ReadStream {
+  _readableState:
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { length: 1 },
+     length: 55863,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     emitClose: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path:
+   '/var/folders/4j/mll6n3xn105_lwsjytrkmdx40000gn/T/firebase-functions-7588LK3UxKgR16gT.zip',
+  fd: 19,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: Infinity,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 55863,
+  closed: false } 
+ Thu May 31 2018 18:25:32 GMT-0300 (-03)
+[debug] [2018-05-31T21:25:36.123Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting: preparing ./ directory for upload...
+[debug] [2018-05-31T21:25:42.428Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/onsurance-me/uploads/-LDs4pDgjK7_yq0U_8ap?fileCount=11757&message=  
+  
+ Thu May 31 2018 18:25:42 GMT-0300 (-03)
+[debug] [2018-05-31T21:32:49.434Z] ----------------------------------------------------------------------
+[debug] [2018-05-31T21:32:49.435Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-05-31T21:32:49.435Z] CLI Version:   3.18.5
+[debug] [2018-05-31T21:32:49.435Z] Platform:      darwin
+[debug] [2018-05-31T21:32:49.435Z] Node Version:  v10.3.0
+[debug] [2018-05-31T21:32:49.436Z] Time:          Thu May 31 2018 18:32:49 GMT-0300 (-03)
+[debug] [2018-05-31T21:32:49.436Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-31T21:32:49.445Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-31T21:32:49.445Z] > authorizing via signed-in user
+[debug] [2018-05-31T21:32:49.447Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/onsurance-me  
+  
+ Thu May 31 2018 18:32:49 GMT-0300 (-03)
+[debug] [2018-05-31T21:32:51.440Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:32:51.441Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/onsurance-me/tokens  
+  
+ Thu May 31 2018 18:32:51 GMT-0300 (-03)
+[debug] [2018-05-31T21:32:52.273Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'onsurance-me'...
+[info] 
+[info] i  deploying database, storage, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-05-31T21:32:57.551Z] >>> HTTP REQUEST PUT https://onsurance-me.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+    "rules": {
+        "messages": {
+            ".read": "auth !== null",
+            ".write": "auth !== null"
+        },
+        "fcmTokens": {
+         "$token": {
+             ".read": "data.val() === auth.uid",
+             ".write": "!data.exists() || data.val() === auth.uid",
+             ".validate": "newData.val() === auth.uid"
+         }
+        }
+    }
+}
+ 
+ Thu May 31 2018 18:32:57 GMT-0300 (-03)
+[debug] [2018-05-31T21:32:59.337Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database onsurance-me is valid
+[debug] [2018-05-31T21:32:59.339Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/onsurance-me  
+  
+ Thu May 31 2018 18:32:59 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:00.728Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-05-31T21:33:00.730Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/onsurance-me:test  
+ { source: { files: [ [Object] ] } } 
+ Thu May 31 2018 18:33:00 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:02.413Z] <<< HTTP RESPONSE 200
+[info] ✔  storage: rules file storage.rules compiled successfully
+[debug] [2018-05-31T21:33:02.415Z] > [functions] package.json contents: {
+  "name": "friendlychat-codelab",
+  "description": "Firebase SDK for Cloud Functions codelab",
+  "dependencies": {
+    "@google-cloud/storage": "^1.5.1",
+    "@google-cloud/vision": "^0.12.0",
+    "child-process-promise": "^2.2.1",
+    "firebase-admin": "~5.11.0",
+    "firebase-functions": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.0",
+    "eslint-plugin-promise": "^3.6.0"
+  }
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-05-31T21:33:02.416Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/onsurance-me?view=CONSUMER_VIEW  
+  
+ Thu May 31 2018 18:33:02 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:02.417Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/onsurance-me?view=CONSUMER_VIEW  
+  
+ Thu May 31 2018 18:33:02 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:04.197Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:33:04.459Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-05-31T21:33:04.461Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/onsurance-me  
+  
+ Thu May 31 2018 18:33:04 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:05.787Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:33:05.788Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/648977158469:getServerAppConfig  
+  
+ Thu May 31 2018 18:33:05 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:06.709Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-05-31T21:33:06.712Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/onsurance-me/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Thu May 31 2018 18:33:06 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:08.224Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:33:08.224Z] [rules] created ruleset projects/onsurance-me/rulesets/a7cef114-208d-46a8-aa22-fccfc3b92bc9
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-05-31T21:33:08.225Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/onsurance-me/configs  
+  
+ Thu May 31 2018 18:33:08 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:09.781Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (54.55 KB) for uploading
+[debug] [2018-05-31T21:33:10.339Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/onsurance-me/locations/us-central1/functions:generateUploadUrl  
+  
+ Thu May 31 2018 18:33:10 GMT-0300 (-03)
+[debug] [2018-05-31T21:33:11.051Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T21:33:11.052Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-95bc2556-ee4d-4d1f-9cf8-a65db21c0bc0/bbc499d8-7918-49a3-ad80-a745a19b000d.zip?GoogleAccessId=648977158469@cloudservices.gserviceaccount.com&Expires=1527804190&Signature=VsmWuYRLciJiuX76mntlR6eSWNcxOnFYl4smeZk3b163r9RD%2B74YYiF2UvZPzVnhRaWzVn5%2Byq8ddAOZdzcfGZYW9dFSg5qG5fZUSpAzN2qMySjcZ%2BYN57TDJjz9q%2FB1E6g4eFDAOtOZUA6uP4Oe6dFhK%2FvNPmeENL5%2B9XWW9xNzD8d9Q4F4eqNMm75DPtp4%2FwGZ4brrs6Kr%2BhK0uCIz8hnKPimy9GYbHfDiLm3XJVjprZq%2FUL64qsJQgSiUciBkc4%2FqWVpgY%2B89i4M%2BpmQvO0imfkQyvHkEo17J%2FPDBmyfkEorGtBlk%2FvzdIShaagMmruJru8fL8Yi%2BrslfzJFcbg%3D%3D  
+ ReadStream {
+  _readableState:
+   ReadableState {
+     objectMode: false,
+     highWaterMark: 65536,
+     buffer: BufferList { length: 1 },
+     length: 55863,
+     pipes: null,
+     pipesCount: 0,
+     flowing: null,
+     ended: true,
+     endEmitted: false,
+     reading: false,
+     sync: false,
+     needReadable: false,
+     emittedReadable: true,
+     readableListening: false,
+     resumeScheduled: false,
+     emitClose: false,
+     destroyed: false,
+     defaultEncoding: 'utf8',
+     awaitDrain: 0,
+     readingMore: false,
+     decoder: null,
+     encoding: null },
+  readable: true,
+  domain: null,
+  _events: { end: [Function] },
+  _eventsCount: 1,
+  _maxListeners: undefined,
+  path: '/tmp/firebase-functions-76463NQ20VB89ugR.zip',
+  fd: 19,
+  flags: 'r',
+  mode: 438,
+  start: undefined,
+  end: Infinity,
+  autoClose: true,
+  pos: undefined,
+  bytesRead: 55863,
+  closed: false } 
+ Thu May 31 2018 18:33:11 GMT-0300 (-03)
