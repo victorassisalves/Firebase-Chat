@@ -244,12 +244,32 @@ FriendlyChat.prototype.checkSignedInWithMessage = function() {
 
 // Saves the messaging device token to the datastore.
 FriendlyChat.prototype.saveMessagingDeviceToken = function() {
-  // TODO(DEVELOPER): Save the device token in the realtime datastore
+  // Save the device token in the realtime datastore
+  firebase.messaging().getToken().then(function(currentToken){
+    if (currentToken){
+      console.log('Got FCM device token:', currentToken);
+
+      // Save the device Token to the data store
+      firebase.databe().ref('/fcmTokens').child(currentToken).set(firebase.auth().currentUser.uid);
+    } else {
+      // Need to request Permission to show notification
+      this.requestNotificationsPermissions();
+    }
+  }.bind(this)).catch(function(error){
+    console.error('Unable to get messaging token.', error);
+  });
 };
 
 // Requests permissions to show notifications.
 FriendlyChat.prototype.requestNotificationsPermissions = function() {
-  // TODO(DEVELOPER): Request permissions to send notifications.
+  // Request permissions to send notifications.
+  console.log('Requesting notifications permission.');
+  firebase.messaging().requestPermission().then(function(){
+    // Notificatio permission granted.
+    this.saveMessagingDeviceToken();
+  }.bind(this)).catch(function(error){
+    console.error('unable to get permission to notify.', error);
+  });
 };
 
 // Resets the given MaterialTextField.
