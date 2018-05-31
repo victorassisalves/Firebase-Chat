@@ -1,32 +1,48 @@
-[debug] [2018-05-31T16:51:51.169Z] ----------------------------------------------------------------------
-[debug] [2018-05-31T16:51:51.171Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2018-05-31T16:51:51.171Z] CLI Version:   3.18.5
-[debug] [2018-05-31T16:51:51.171Z] Platform:      darwin
-[debug] [2018-05-31T16:51:51.171Z] Node Version:  v10.3.0
-[debug] [2018-05-31T16:51:51.172Z] Time:          Thu May 31 2018 13:51:51 GMT-0300 (-03)
-[debug] [2018-05-31T16:51:51.172Z] ----------------------------------------------------------------------
+[debug] [2018-05-31T18:27:02.773Z] ----------------------------------------------------------------------
+[debug] [2018-05-31T18:27:02.774Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-05-31T18:27:02.775Z] CLI Version:   3.18.5
+[debug] [2018-05-31T18:27:02.775Z] Platform:      darwin
+[debug] [2018-05-31T18:27:02.775Z] Node Version:  v10.3.0
+[debug] [2018-05-31T18:27:02.776Z] Time:          Thu May 31 2018 15:27:02 GMT-0300 (-03)
+[debug] [2018-05-31T18:27:02.776Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-05-31T16:51:51.180Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-05-31T16:51:51.181Z] > authorizing via signed-in user
-[debug] [2018-05-31T16:51:51.185Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/friendlychattest-098  
+[debug] [2018-05-31T18:27:02.787Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-31T18:27:02.787Z] > authorizing via signed-in user
+[debug] [2018-05-31T18:27:02.788Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-05-31T18:27:02.789Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/eqUZ1hiBO8uk6rH67hTvawsCJeQFOpigyyswg2ydPlU',
+  client_id:
+   '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope:
+   'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu May 31 2018 15:27:02 GMT-0300 (-03)
+[debug] [2018-05-31T18:27:10.664Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T18:27:10.673Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/friendlychattest-098  
   
- Thu May 31 2018 13:51:51 GMT-0300 (-03)
-[debug] [2018-05-31T16:51:53.807Z] <<< HTTP RESPONSE 200
-[debug] [2018-05-31T16:51:53.809Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/friendlychattest-098/tokens  
+ Thu May 31 2018 15:27:10 GMT-0300 (-03)
+[debug] [2018-05-31T18:27:12.466Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T18:27:12.467Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/friendlychattest-098/tokens  
   
- Thu May 31 2018 13:51:53 GMT-0300 (-03)
-[debug] [2018-05-31T16:51:55.241Z] <<< HTTP RESPONSE 200
-[debug] [2018-05-31T16:51:55.243Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/friendlychattest-098  
+ Thu May 31 2018 15:27:12 GMT-0300 (-03)
+[debug] [2018-05-31T18:27:13.552Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-31T18:27:13.553Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/friendlychattest-098  
   
- Thu May 31 2018 13:51:55 GMT-0300 (-03)
-[debug] [2018-05-31T16:51:57.083Z] <<< HTTP RESPONSE 200
+ Thu May 31 2018 15:27:13 GMT-0300 (-03)
+[debug] [2018-05-31T18:27:15.902Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/victor/Projetos/friendlyeats-web/firebase-eats'...
 [info] 
-[debug] [2018-05-31T16:51:57.086Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/998612342061/clients/_:getWebAppConfig  
+[debug] [2018-05-31T18:27:15.904Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/998612342061/clients/_:getWebAppConfig  
   
- Thu May 31 2018 13:51:57 GMT-0300 (-03)
-[debug] [2018-05-31T16:51:58.005Z] <<< HTTP RESPONSE 200
+ Thu May 31 2018 15:27:15 GMT-0300 (-03)
+[debug] [2018-05-31T18:27:17.724Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2018-05-31T18:27:17.750Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/998612342061/clients/_:getWebAppConfig  
+  
+ Thu May 31 2018 15:27:17 GMT-0300 (-03)
+[debug] [2018-05-31T18:27:18.421Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: ./
-[info] ✔  hosting: Local server: http://localhost:5000
+[info] ✔  hosting: Local server: http://localhost:5004
 
